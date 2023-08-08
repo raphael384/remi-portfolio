@@ -11,7 +11,6 @@ import World from './World/World.js';
 import Animation from './World/Animation.js';
 import Helpers from './Utils/Helpers.js';
 import assets from "./Utils/assets.js"
-import timelineBuilder from './Utils/timelineBuilder.js';
 
 export default class Experience {
     constructor(canvas) {
@@ -34,7 +33,6 @@ export default class Experience {
 
         this.helpers = new Helpers();
 
-        timelineBuilder();
 
         this.sizes.on("resize", () => { this.resize() })
         this.time.on("update", () => { this.update() });

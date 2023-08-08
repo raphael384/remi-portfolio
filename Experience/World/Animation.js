@@ -51,59 +51,7 @@ export default class Animation extends EventEmitter {
 
     setFirstSectionAnimation() {
 
-        this.firstMoveTimeline = GSAP.timeline({
-            scrollTrigger: {
-                trigger: ".first-section-margin",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 0.6,
-                onEnterBack: () => {
-                    this.secondTimeline.kill();
-                    this.float();
-                },
-                onLeave: () => {
-                    this.setSecondSectionAnimation();
-                }
-
-
-            },
-        }).to(this.object.position, {
-            x: () => {
-                return this.sizes.width * -0.0024;
-            },
-        });
-
-        GSAP.from(".color-line", {
-            scrollTrigger: {
-                trigger: ".fixed-line",
-                start: "top center",
-                end: "bottom center",
-                pin: ".color-line",
-                markers: false,
-
-
-            },
-        });
-
-        const rounds = document.querySelectorAll(".round");
-
-        rounds.forEach((round) => {
-
-            GSAP.timeline({
-                scrollTrigger: {
-                    trigger: round,
-                    start: "center center",
-                    end: "center center",
-                    scrub: 0.7,
-                    invalidateOnRefresh: true,
-                },
-            }).to(round, {
-                scale: 1.5,
-                ease: "back.in(1.7)",
-            }, "same").to(round, {
-                backgroundColor: "#8BD3DD",
-            }, "same");
-        });
+        
     }
 
     setSecondSectionAnimation() {
