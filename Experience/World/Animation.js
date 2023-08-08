@@ -38,11 +38,11 @@ export default class Animation extends EventEmitter {
     float() {
 
         this.floatingEffect = GSAP.to(this.object.rotation, {
-            duration: "random(7.0,10.0)",
-            x: "+= random(-1.10,1.10)",
-            y: "+= random(-1.10,1.10)",
-            z: "+= random(-1.10,1.10)",
-            ease: "Power1.easeInOut",
+            duration: "random(3.0,4.0)",
+            y: "+= random(-3.10,3.10)",
+            x: "+= random(-3.10,3.10)",
+            z: "+= random(-3.10,3.10)",
+            ease: "Power3.easeInOut",
             onComplete: () => {
                 this.float();
             },
