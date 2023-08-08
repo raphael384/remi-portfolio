@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+  font-family: "Space Grotesk";
+}
+
+/* var */
+
+html,
+body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+:root {
+  --events-count: 4;
+  --primary-color: #F582AE;
+  --secondary-color: #8BD3DD;
+  --tertiary-color: #00103c;
+  --quaternary-color: #F3D2C1;
+}
+
+
+
+/* body::-webkit-scrollbar {
+  display: none;
+} */
+
+.experience {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+.experience-canvas {
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.section-margin {
+  height: 300px;
+}
+
+/* HERO */
+
+.hero-section {
+  height: 100vh;
+}
+
+.hero-wrapper {
+  position: absolute;
+  bottom: 25%;
+  left: 10vw;
+}
+
+.hero-title {
+  font-size: 60px;
+}
+
+.hero-description {
+  font-size: 20px;
+}
+
+.credits {
+  position: absolute;
+  top: 15%;
+  right: 10vw;
+}
+
+.credit-link {
+  color: unset;
+  text-decoration: none;
+}
+
+.section-margin {
+  height: 1000px;
+}
+
+/* FIRST SECTION */
+
+.first-section {
+  height: 1200px;
+}
+
+
+
+.timeline-wrapper {
+  position: absolute;
+  right: 5vw;
+  width: 45vw;
+  height: 1200px;
+  background-color: var(--primary-color);
+  border-radius: 110px;
+}
+
+
+
+.timeline-title {
+  position: absolute;
+  top: 5vw;
+  left: 10vw;
+  color: var(--secondary-color);
+  font-size: 48px;
+}
+
+.timeline-title::after {
+  position: absolute;
+  width: 52px;
+  height: 12px;
+  background-color: var(--quaternary-color);
+  content: "";
+  left: 1px;
+  bottom: -12px;
+}
+
+.line {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 11px;
+  width: 10px;
+  height: 100%;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  clip-path: inset(0);
+}
+
+
+
+/* .inside-line {
+  position: relative;
+  z-index: 9999999999;
+  width: 100%;
+  box-sizing: border-box;
+} */
+
+.color-line {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  position: absolute;
+  top: -100%;
+  background-color: var(--secondary-color);
+  transform-origin: top;
+  height: 100%;
+  transform: scaleY(1);
+}
+
+
+/* events */
+
+.events-wrapper {
+  position: relative;
+  top: 20%;
+  bottom: 10%;
+  left: 10vw;
+  width: 80%;
+  height: 70%;
+}
+
+.event {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 32px;
+  width: 100%;
+}
+
+
+.event-date {
+  position: absolute;
+  left: -7vw;
+  font-size: 24px;
+  color: white;
+}
+
+
+
+/* rounds */
+
+.round {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background-color: white;
+  border-radius: 50%;
+  transform: scale(1);
+}
+
+/* text */
+.event-title {
+  position: absolute;
+  left: 5vw;
+  font-size: 24px;
+  color: white;
+
+}
+
+/* THIRD SECTION */
+
+.second-section {
+  width: 100%;
+  height: 155vh;
+  box-sizing: border-box;
+  display: flex;
+  overflow: hidden;
+}
+
+.section-title {
+  position: absolute;
+  font-size: 96px;
+  left: 24px;
+}
+
+.work-title {
+  transform: rotate(-0.25turn);
+  width: 100%;
+}
+
+.blob {
+  width: 100%;
+  height: 100%;
+  color: var(--tertiary-color);
+  scale: 0;
+  transition: all 0.9s ease-in-out;
+  overflow-x: hidden;
+
+}
+
+.blob-path {
+  width: 100%;
+  height: 100%;
+}
+
+.blob-complete {
+  scale: 4;
+  width: 120vw;
+  height: 120vh;
+
+}
+
+
+.enter-animation {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; */
+}
+
+.cards-wrapper {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+}
+
+.card {
+  position: absolute;
+  display: flex;
+  width: 60%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 75vh;
+  border-radius: 60px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  overflow: hidden;
+  transform: translate(75%, 75%) rotate(-0.3turn);
+  transform-origin: top right;
+  opacity: 0;
+}
+
+
+
+.card-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.2;
+  top: 0;
+}
+
+.action-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 250px;
+  height: 75px;
+  bottom: 48px;
+  left: 48px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.27);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.8px);
+  -webkit-backdrop-filter: blur(6.8px);
+  border: 1px solid rgba(255, 255, 255, 0.36);
+}
+
+.card-title {
+  position: absolute;
+  font-size: 36px;
+  font-weight: 600;
+  left: 16px;
+  color: #fef6e4;
+}
+
+.card-btn {
+  position: absolute;
+  cursor: pointer;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  right: 14px;
+  width: 50px;
+  height: 50px;
+  background-color: #00103c;
+  border-radius: 12px;
+  color: var(--secondary-color);
+  transition: all 0.2s;
+}
+
+.card-btn:hover {
+  transform: scale(1.1);
+}
+
+
+
+.card-open-btn {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  bottom: 11px;
+  left: 11px;
+  /* animation: pointing 0.6s infinite alternate; */
+
+}
+
+.card-btn:hover .card-open-btn  {
+  animation: pointing 1s infinite alternate;
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 100%;
+  height: 60px;
+  background-color: var(--primary-color);
+  
+}
+
+
+@keyframes pointing {
+  from {
+    transform: translate(-2px, 2px);
+  }
+
+  to {
+    transform: translate(2px, -2px);
+  }
+
+}
+
+@media (max-width: 968px) {
+  .hero-wrapper {
+    left: 5%;
+  }
+  .credits {
+    right: initial;
+    left: 5%;
+  }
+  .timeline-wrapper {
+    right: initial;
+    left: 5%;
+    width: 90vw;
+    border-radius: 48px;
+  }
+  .timeline-title {
+    top: 7vw;
+  }
+  .events-wrapper {
+    left: 25vw;
+    width: 75%;
+  }
+  .event-date {
+    left: -19vw;
+  }
+  .event-title {
+    left: 12vw;
+  }
+
+  /* cards sections */
+  .cards-wrapper {
+    justify-content: center;
+
+  }
+  .card {
+    width: 75%;
+    height: 25vh;
+    border-radius: 36px;
+    
+    position: absolute;
+    transform: translate(0%, 75%) rotate(0turn);
+    transform-origin: initial;
+  }
+
+  .action-card {
+    width: calc(2 * 14px + 50px);
+    left: 24px;
+    bottom: 24px;
+    transform: scale(0.9);
+    transform-origin: left bottom;
+  }
+
+  .card-title {
+    display: none;
+  }
+
+}
