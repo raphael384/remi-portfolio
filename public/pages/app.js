@@ -2,6 +2,7 @@ const container = document.querySelector('.container');
 
 function generateMasonryGrid(columns, posts) {
   container.innerHTML = '';
+  var isError = false;
 
   //Store column arrays that contain relevant posts
   let columnWrappers = {};
@@ -23,21 +24,28 @@ function generateMasonryGrid(columns, posts) {
       postDiv.classList.add('post');
       let image = document.createElement('img');
       image.src = posts.image;
-      let overlay = document.createElement('div');
-      overlay.classList.add('overlay');
-      let title = document.createElement('h3');
-      title.innerText = posts.title;
+      image.onload = () => {
+        // Vous pouvez ajouter d'autres actions ici, comme afficher un message à l'utilisateur.
+        let overlay = document.createElement('div');
+        overlay.classList.add('overlay');
+        let title = document.createElement('h3');
+        title.innerText = posts.title;
 
-      overlay.appendChild(title);
-      postDiv.append(image, overlay);
-      column.appendChild(postDiv);
+        overlay.appendChild(title);
+        postDiv.append(image, overlay);
+        column.appendChild(postDiv);
+      };
+      image.onerror = () => {
+        // nothing
+      }
+
+
     });
     container.appendChild(column);
   }
 }
 
 let previousScreenSize = innerWidth;
-console.log(previousScreenSize);
 
 window.addEventListener('resize', () => {
   imageIndex = 0;

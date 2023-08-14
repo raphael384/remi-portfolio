@@ -14,5 +14,8 @@
     "lil-gui": "^0.18.1",
     "three": "^0.152.2",
     "vite": "^4.3.2"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security"
   }
 }

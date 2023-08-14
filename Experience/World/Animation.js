@@ -83,10 +83,8 @@ export default class Animation extends EventEmitter {
                 end: "bottom bottom",
                 scrub: false,
                 onEnter: () => {
-                    // document.querySelector(".second-section").style.overflow = "hidden";
 
                     document.querySelector(".blob").classList.add("blob-complete")
-                    // this.floatingEffect.pause();
                     GSAP.to(".cards-wrapper", {
                         opacity: 1,
                         delay: 1,
@@ -94,7 +92,6 @@ export default class Animation extends EventEmitter {
                     });
                 },
                 onEnterBack: () => {
-                    // document.querySelector(".second-section").style.overflow = "visible";
                     GSAP.to(".cards-wrapper", {
                         opacity: 0,
                         delay: 0,

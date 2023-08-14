@@ -1,10 +1,10 @@
 const posts = [];
-const images = [
-  '../../photos/m1.jpg',
-  '../../photos/m2.jpg',
-  '../../photos/m3.jpg',
+const images = [];
 
-];
+for (let index = 1; index < 50; index++) {
+  images.push(`../../photos/m${index}.jpg`)
+  
+}
 
 let imageIndex = 0;
 
